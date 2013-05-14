@@ -36,20 +36,23 @@ You need to pass which extraction to use. The 3 extraction algorithms are Readab
 
 * With out next page finding
 
-Article article = new Article();
-ContentExtractor ce = new ContentExtractor();
-HtmlFetcher htmlFetcher = new HtmlFetcher();
-String html = htmlFetcher.getHtml("http://blogmaverick.com/2012/11/19/what-i-really-think-about-facebook/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Counterparties+%28Counterparties%29", 0);
+	Article article = new Article();
+	ContentExtractor ce = new ContentExtractor();
+	HtmlFetcher htmlFetcher = new HtmlFetcher();
+	String html = htmlFetcher.getHtml("http://blogmaverick.com/2012/11/19/what-i-really-think-about-facebook/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Counterparties+%28Counterparties%29", 0);
 
-article = ce.extractContent(html, "ReadabilitySnack");
-System.out.println("Content : "+article.getCleanedArticleText());
+	article = ce.extractContent(html, "ReadabilitySnack");
+	System.out.println("Content : "+article.getCleanedArticleText());
+
+* With next page html sources
 
 If you need to extract and append content from next pages also then
+
 * You need to use [NextPageFinder] (https://github.com/srijiths/NextPageFinder) to find out all the next pages links.
 * Get the html of each next pages as a List of String using [Network](https://github.com/srijiths/Network)
 * Pass it to the content extractor as
 
-article = ce.extractContent(firstPageHtml,extractionAlgorithm,nextPagesHtmlSources)
+	article = ce.extractContent(firstPageHtml,extractionAlgorithm,nextPagesHtmlSources)
 
 Build
 =====
