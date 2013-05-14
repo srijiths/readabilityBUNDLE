@@ -5,6 +5,8 @@ Recent days its really a challenging open issue to find out the main article con
 
 My focus is mainly on the tuning parameters and customization / modifications of these algorithmic features according to my requirements.
 
+readabilityBUNDLE will perform equally what other algorithms does plus below listed extras. 
+
 Whats extra in readabilityBUNDLE
 ================================
 
