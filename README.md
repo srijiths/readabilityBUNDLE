@@ -3,7 +3,7 @@ readabilityBUNDLE
 
 Recent days its really a challenging open issue to find out the main article content from html pages. There are many open source algorithms / implementations are available. What i aim in this project is concise some of the best content extraction algorithm implemented in JAVA.
 
-My focus is mainly on the tuning parameters and customization / modifications of these algorithmic features according to my requirements. 
+My focus is mainly on the tuning parameters and customization / modifications of these algorithmic features according to my requirements.
 
 Whats extra in readabilityBUNDLE
 ================================
@@ -20,6 +20,38 @@ Whats extra in readabilityBUNDLE
 
 The main challenge which i was facing is to extract the main content by keeping all the images / videos / html tags / and some realated div tags which are used as content / non content identification by most of the algorithms.
 
-readabilityBUNDLE borrows much code and concepts from [Project Goose](http://www.gravity.com/labs/goose/) , [Snacktory](https://github.com/karussell/snacktory) and [Java-Readability](https://github.com/basis-technology-corp/Java-readability). My intension was just fine tune / modify the algorithm to work with my requirements.
+readabilityBUNDLE borrows much code and concepts from Project Goose , Snacktory and Java-Readability. My intension was just fine tune / modify the algorithm to work with my requirements.
 
 Some html pages works very well in a particular algorithm and some not. This is the main reason i put all the available algorithm under a roof . You can choose an algorithm which best suits you.
+
+Dependency Projects
+===================
+* [StringHelpers](https://github.com/srijiths/StringHelpers)
+* [Network](https://github.com/srijiths/Network)
+* [NextPageFinder] (https://github.com/srijiths/NextPageFinder)
+
+Usage
+=====
+You need to pass which extraction to use. The 3 extraction algorithms are ReadabilitySnack,ReadabilityCore and ReadabilityGoose. By default its ReadabilitySnack.
+
+* With out next page finding
+
+Article article = new Article();
+ContentExtractor ce = new ContentExtractor();
+HtmlFetcher htmlFetcher = new HtmlFetcher();
+String html = htmlFetcher.getHtml("http://blogmaverick.com/2012/11/19/what-i-really-think-about-facebook/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Counterparties+%28Counterparties%29", 0);
+
+article = ce.extractContent(html, "ReadabilitySnack");
+System.out.println("Content : "+article.getCleanedArticleText());
+
+If you need to extract and append content from next pages also then
+* You need to use [NextPageFinder] (https://github.com/srijiths/NextPageFinder) to find out all the next pages links.
+* Get the html of each next pages as a List of String using [Network](https://github.com/srijiths/Network)
+* Pass it to the content extractor as
+
+article = ce.extractContent(firstPageHtml,extractionAlgorithm,nextPagesHtmlSources)
+
+Build
+=====
+
+Using Maven
