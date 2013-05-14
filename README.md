@@ -20,7 +20,7 @@ Whats extra in readabilityBUNDLE
 
 The main challenge which i was facing is to extract the main content by keeping all the images / videos / html tags / and some realated div tags which are used as content / non content identification by most of the algorithms.
 
-readabilityBUNDLE borrows much code and concepts from Project Goose , Snacktory and Java-Readability. My intension was just fine tune / modify the algorithm to work with my requirements.
+readabilityBUNDLE borrows much code and concepts from [Project Goose](https://github.com/GravityLabs/goose) , [Snacktory](https://github.com/karussell/snacktory) and [Java-Readability](https://github.com/basis-technology-corp/Java-readability). My intension was just fine tune / modify the algorithm to work with my requirements.
 
 Some html pages works very well in a particular algorithm and some not. This is the main reason i put all the available algorithm under a roof . You can choose an algorithm which best suits you.
 
