@@ -24,6 +24,8 @@ readabilityBUNDLE borrows much code and concepts from Project Goose , Snacktory 
 
 Some html pages works very well in a particular algorithm and some not. This is the main reason i put all the available algorithm under a roof . You can choose an algorithm which best suits you.
 
+You can see all author citations at each java file itself.
+
 Dependency Projects
 ===================
 * [StringHelpers](https://github.com/srijiths/StringHelpers)
