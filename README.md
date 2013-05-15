@@ -1,7 +1,7 @@
 readabilityBUNDLE
 =================
 
-Recent days its really a challenging open issue to find out the main article content from html pages. There are many open source algorithms / implementations are available. What i aim in this project is concise some of the best content extraction algorithm implemented in JAVA.
+Recent days its really a challenging open issue to find out the main article content from html pages. There are many open source algorithms / implementations available. What i aim in this project is concise some of the best content extraction algorithm implemented in JAVA.
 
 My focus is mainly on the tuning parameters and customization / modifications of these algorithmic features according to my requirements.
 
@@ -20,7 +20,7 @@ Whats extra in readabilityBUNDLE
 * Many cleaner / formatter measures added.
 * Some core changes in algorithms.
 
-The main challenge which i was facing is to extract the main content by keeping all the images / videos / html tags / and some realated div tags which are used as content / non content identification by most of the algorithms.
+The main challenge which i was facing to extract the main content by keeping all the images / videos / html tags / and some realated div tags which are used as content / non content identification by most of the algorithms.
 
 readabilityBUNDLE borrows much code and concepts from [Project Goose](https://github.com/GravityLabs/goose) , [Snacktory](https://github.com/karussell/snacktory) and [Java-Readability](https://github.com/basis-technology-corp/Java-readability). My intension was just fine tune / modify the algorithm to work with my requirements.
 
@@ -36,7 +36,7 @@ Dependency Projects
 
 Usage
 =====
-You need to pass which extraction to use. The 3 extraction algorithms are ReadabilitySnack,ReadabilityCore and ReadabilityGoose. By default its ReadabilitySnack.
+You need to say which extraction algorithm to use. The 3 extraction algorithms are ReadabilitySnack,ReadabilityCore and ReadabilityGoose. By default its ReadabilitySnack.
 
 * With out next page finding
 
@@ -53,11 +53,11 @@ Sample Usage
 
 * With next page html sources
 
-If you need to extract and append content from next pages also then
+If you need to extract and append content from next pages also then,
 
-* You need to use [NextPageFinder] (https://github.com/srijiths/NextPageFinder) to find out all the next pages links.
+* You can use [NextPageFinder] (https://github.com/srijiths/NextPageFinder) to find out all the next pages links.
 * Get the html of each next pages as a List of String using [Network](https://github.com/srijiths/Network)
-* Pass it to the content extractor as
+* Pass it to the content extractor like
 
 	article = ce.extractContent(firstPageHtml,extractionAlgorithm,nextPagesHtmlSources)
 
