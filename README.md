@@ -1,6 +1,8 @@
 readabilityBUNDLE
 =================
 
+Main Content Extraction from html written in Java.
+
 Recent days its really a challenging open issue to find out the main article content from html pages. There are many open source algorithms / implementations available. What i aim in this project is concise some of the best content extraction algorithm implemented in JAVA.
 
 My focus is mainly on the tuning parameters and customization / modifications of these algorithmic features according to my requirements.
