@@ -67,7 +67,7 @@
 					<configuration>
 						<archive>
 							<manifest>
-								<mainClass>com.sree.textbytes.readabilityBUNDLE.Test</mainClass>
+								<mainClass>com.sree.textbytes.readabilityBUNDLE.SampleUsage</mainClass>
 							</manifest>
 						</archive>
 						<descriptorRefs>
