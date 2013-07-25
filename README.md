@@ -66,4 +66,4 @@ If you need to extract and append content from next pages also then,
 Build
 =====
 
-Using Maven
+Using Maven , mvn clean package
