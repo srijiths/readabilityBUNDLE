@@ -147,36 +147,30 @@ public class ContentExtractor {
 					}
 					logger.debug("Available size of images in top node : "+ imageCandidates.size());
 					
-					if(imageCandidates.size() > 0) {
-						logger.debug("Top node has images " + imageCandidates.size());
-					}else {
-						
-						logger.debug("Top node may miss image, searching");
-						article.setTopImage(bestImageGuesser.getTopImage(article.getTopNode(), document));
-						logger.debug("BestImage : "	+ article.getTopImage().getImageSrc());
-						
-						String bestImage = article.getTopImage().getImageSrc();
-						if (!string.isNullOrEmpty(bestImage)) { 
-							logger.debug("Best image found : " + bestImage);
-							if(!imageCandidates.contains(bestImage)) {
-								logger.debug("Top node does not contain the same Best Image");
-								try {
-									logger.debug("Child Node : "+article.getTopNode().children().size());
-									if(article.getTopNode().children().size() > 0) {
-										logger.debug("Child Nodes greater than Zero "+article.getTopNode().children().size());
-										article.getTopNode().child(0).before("<p><img src=" + bestImage + "></p>");
-									} else {
-										logger.debug("Top node has 0 childs appending after");
-										article.getTopNode().append("<p><img src=" + bestImage + "></p>");
-									}
-
-								} catch (Exception e) {
-									logger.error(e.toString(), e);
+					// Setting the best image , in case still you need the top image.
+					article.setTopImage(bestImageGuesser.getTopImage(article.getTopNode(), document));
+					logger.debug("BestImage : "	+ article.getTopImage().getImageSrc());
+					
+					String bestImage = article.getTopImage().getImageSrc();
+					if (!string.isNullOrEmpty(bestImage)) { 
+						logger.debug("Best image found : " + bestImage);
+						if(!imageCandidates.contains(bestImage)) {
+							logger.debug("Top node does not contain the same Best Image");
+							try {
+								logger.debug("Child Node : "+article.getTopNode().children().size());
+								if(article.getTopNode().children().size() > 0) {
+									logger.debug("Child Nodes greater than Zero "+article.getTopNode().children().size());
+									article.getTopNode().child(0).before("<p><img src=" + bestImage + "></p>");
+								} else {
+									logger.debug("Top node has 0 childs appending after");
+									article.getTopNode().append("<p><img src=" + bestImage + "></p>");
 								}
-								
-							}else {
-								logger.debug("Top node already has the Best image found");
+							} catch (Exception e) {
+								logger.error(e.toString(), e);
 							}
+								
+						}else {
+							logger.debug("Top node already has the Best image found");
 						}
 					}
 				} catch (Exception e) {
